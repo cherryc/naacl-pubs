@@ -12,12 +12,12 @@ following command:
 If you have any problems, please contact the NAACL 2013 Publications chairs at
 [naacl-2013-pub-chairs@googlegroups.com](mailto:naacl-2013-pub-chairs@googlegroups.com).
 
-Colin Cherry
-Institute for Information Technology
-National Research Council of Canada
+- Colin Cherry
+  Institute for Information Technology
+  National Research Council of Canada
 
-Matt Post
-Human Language Technology Center of Excellence
-Johns Hopkins University
+- Matt Post
+  Human Language Technology Center of Excellence
+  Johns Hopkins University
 
 
