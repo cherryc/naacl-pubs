@@ -16,8 +16,8 @@ Colin Cherry<br/>
 Institute for Information Technology<br/>
 National Research Council of Canada
 
-Matt Post
+Matt Post<br/>
 Human Language Technology Center of Excellence<br/>
-Johns Hopkins University<br/>
+Johns Hopkins University
 
 
