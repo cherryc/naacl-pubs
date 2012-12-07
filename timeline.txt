@@ -21,9 +21,9 @@
 14
 15 X         2   04/07 Main conference camera-ready, (X) 04/12 Demos & workshop camera-readies
 16
-17
-18 *             04/28 Workshop/demo books to pub chairs
-19
+17               
+18 *             04/28 Demos and Student Research workshops books due to pub chairs
+19 *             05/05 Workshop books due to pub chairs
 20 *             05/12 Delivery of complete proceedings from pub chairs to the printer
 21
 22
