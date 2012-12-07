@@ -3,15 +3,17 @@
 49
 ---------------- CURRENT WEEK -----------------------------------
 50   X       X   12/09 Main conference submission, 12/14 Workshop notifications
-1
-2
-3
-4          X     01/24 Author response period begins
-5      X         01/29 Author response period ends
-6
-7        X       02/13 Main conference notification
-8
-9            *   03/01 Proposed workshop paper due date
+51
+52
+ 1
+ 2
+ 3
+ 4         X     01/24 Author response period begins
+ 5     X         01/29 Author response period ends
+ 6
+ 7       X       02/13 Main conference notification
+ 8
+ 9           *   03/01 Proposed workshop paper due date
 10
 11
 12
