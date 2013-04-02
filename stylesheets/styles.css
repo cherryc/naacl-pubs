@@ -183,6 +183,17 @@ footer {
   bottom:50px;
 }
 
+div.col {
+    width: 45%;
+    float: left;
+    margin: 10px;
+}
+
+div.row {
+    clear: both;
+    width: 100%;
+}
+
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {

@@ -16,80 +16,124 @@
 <div class="row">
   <div class="col">
     <p>
-      This page is for conference organizers (main conference, workshop &amp; demo chairs, *SEM chairs)
-      who need to put together a schedule for inclusion in the NAACL handbook. The handbook duties have
-      been folded into the responsibilities of the publications co-chairs this
+      This page is for conference organizers (main conference, workshop &amp; demo chairs) who need
+      to put together a schedule for inclusion in the NAACL handbook. The handbook duties have been
+      folded into the responsibilities of the publications co-chairs this
       year. <a href="mailto:clemmer.alexander@gmail.com">Alex Clemmer</a> is heading up the
-      construction of the printed handbook; in addition to this, NAACL will also be producing a digital
-      version of the handbook that will be browsable on computers and smart phones. Both of these
-      proceedings will be generated from the same <b>order</b> text files that have been used in the past.
-    </p>
-
-    <h2>Introduction</h2>
-
-    <p>
-      Workshop proceedings will be communicated to the NAACL 2013 handbook team in a canonical
-      format. This document provides a (sparsely-illustrated) procedure to generate your workshop
-      proceedings in this format.
+      construction of the printed handbook; in addition to this, NAACL will also be producing a
+      digital version of the handbook that will be browsable on computers and smart phones. Both of
+      these proceedings will be generated from the same <tt>order</tt> text files that have been used
+      in the past.
     </p>
 
     <h3>Instructions</h3>
 
-    Our goal in this section is to develop instructions that allow workshop chairs to easily generate proceedings in the correct format, while simultaneously avoiding softconf or START, as they greatly complicate the process of building the handbook. Instructions fall roughly into (1) obtaining the data, (2) building an order file, and (3) formatting the order to fit the workbook format.
+    <p>
+      Producing your conference schedule involves two steps: (1) obtaining the raw data the schedule
+      is based around (the papers, dumped from Softconf) and (2) editing the <tt>order</tt> file in
+      a canonical way, from which the printed and digital handbooks can be generated.
+    </p>
 
-    </div>
+    <h4>0. Preliminaries</h4>
+
+    Please begin by making sure that all of your papers meet the camera-ready standards as laid
+    out <a href="camera-ready-faq.htmL">in this document</a>. In particular, there are four main
+    areas of compliance you should look for:
+
+    <ol>
+      <li><i>Margins</i>. Papers should fit entirely within the margins prescribed by the
+        conference booklet. You can check this by going to
+        the <a href="https://www.softconf.com/naacl2013/papers/manager/">Conference Manager
+          screen</a>, choosing "ACLPUB" from the "Conference Program" list on the right, choosing the
+        "Generate" tab, clicking on the "Draft" button to generate the draft, and then browsing the
+        resulting file. This will present you with two pages of each paper along with guidelines
+        which will show you whether each paper fits within the margins. If not, you can adjust them
+        yourself, or email the authors and ask them to do it using the tool provided when they
+        uploaded their camera-ready paper.
+      </li>
+      <li>
+        <i>Black &amp; White readability</i>. Papers can contain color images, charts, and
+        figures, but they should all be interpretable when printed or viewed in grayscale.
+      </li>
+      <li>
+        <i>References</i>. Please make sure there are no obvious problems with the formatting of
+        the References section.
+      </li>
+      <li>
+        <i>Metadata</i>. Please make sure there are no obvious problems with the formatting of
+        names in the metadata for each paper (which is viewable from the proceedings draft
+        index). In particular, authors should be aware that their
+        names <a href="camera-ready-faq.html#name-formatting">will be formatted according to how
+          they have entered it</a> on their Softconf unified user info page.
+      </li>
+    </ol>
+
+    <p>
+      Once all of your papers are in place, you can proceed to organizing dumping them and
+      organizing them into a schedule.
+    </p>
+
   </div>
-  <div class="row">
-    <div class="col">
+</div>
+<div class="row">
+  <div class="col">
 
-      <h4>Obtaining the proceedings</h4>
+    <h4>1. Obtaining the proceedings</h4>
 
-      Our first task is to obtain the raw proceedings data.
-
-      <ul>
-        <li>First, log on to softconf. Your screen should look roughly like it does in the screen
-        capture to the right.</li>
-        <li>On the righthand side is a column marked "Conference Program". There is a hyperlink at the bottom of this column, with the text "ACLPUB". Click it.</li>
-        <li>We now generate the proceedings. Click on the "Generate" tab, and under "Generate Button", click "ALL".</li>
-        <li>Wait for the generation to finish (this may take awhile).</li>
-        <li>Click the download button.</li>
-        <li>We're done obtaining the data. You may close the browser.</li>
-      </ul>
-    </div>
-    <div class="col">
-      <img src="images/handbook-screen.png">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-    <h4>Building the order file</h4>
-
-    Now we need to get the data into shape for transmission to the handbook team.
+    The next task is to obtain the raw proceedings data from Softconf.
 
     <ul>
-      <li>Uncompress the tarball you downloaded in the previous step. If you called it <tt>proceedings.tgz</tt>, then (assuming you are in the correct directory) you might run <tt>tar xzf proceedings.tgz</tt>.</li>
-      <li>Obtain the aclpub software. One way to do this is to download the CVS repository using the command <tt>cvs -d :pserver:anoncvs@ftp.clsp.jhu.edu:/aclpub checkout aclpub</tt>.</li>
-      <li>Next we must <tt>aclpub/make/Makefile bookchair proceedings Makefile</tt>. Subsequently:
-        <ul>
-          <li>You may need to set the environment variable <tt>export ACLPUB= pwd/aclpub</tt> for the following step.</li>
-          <li>In previous years, occasi FIXME</li>
-          <li>Open the instructions located at <tt>aclpub/doc/bookchairs/index.html</tt>.</li>
-          <li>If you followed our instructions in section \ref{obtain} for obtaining the data, then you may skip to the next step.</li>
-          <li>Otherwise, follow the steps up to (but not including) the step to execute <tt>make get-order</tt>.</li>
-      </ul></li>
-      <li>Now we must attempt to make the <tt>order</tt> file.
-        <ul>
-          <li>In previous years, it has occasionally been a problem that the Perl module Text-PDF was not found.</li>
-          <li>This can be found at <tt>http://search.cpan.org/~mhosken/Text-PDF-0.29a/</tt>.</li>
-          <li>Download and unpack it.</li>
-          <li>Run <tt>ln -s Text-PDF-0.XX/lib/Text .</tt>, where <tt>XX</tt> is the version number.</li>
-      </ul></li>
-      <li>This results in a file called <tt>order</tt>. Now the only task left is properly formatting the order file to reflect the workshop proceedings.</li>
+      <li>First, <a href="https://www.softconf.com/naacl2013/papers/manager/">log on to
+          Softconf</a>. Your screen should look roughly like it does in the screen capture to the
+        right.</li>
+      <li>On the righthand side is a column marked "Conference Program". There is a hyperlink at the bottom of this column, with the text "ACLPUB". Click it.</li>
+      <li>We now generate the proceedings. Click on the "Generate" tab, and under "Generate Button", click "ALL".</li>
+      <li>Wait for the generation to finish (this may take awhile).</li>
+      <li>Click the download button.</li>
+      <li>A file named <tt>proceedings.tgz</tt> will be downloaded to your computer (possibly
+        after a prompt). You are done with Softconf and may close your browser.
     </ul>
+  </div>
+  <div class="col">
+    <img src="images/handbook-screen.png" alt="Screen capture of Softconf management screen" />
+  </div>
+</div>
 
-    <h4>Formatting the order file</h4>
+<div class="row">
+  <div class="col">
+    <h4>2. Formatting the order file</h4>
 
-    The <tt>order</tt> file currently contains pointers to all the papers in your workshop. Your job is now to produce your workshop proceedings. Bulletted below is a list of instructions about how to format your proceedings. In figure 2, we see a successful layout designed using these rules, from last year's conference. In figure 3, we see the \LaTeX output of this layout design.
+    <p>The <tt>proceedings.tgz</tt> tarball will unpack to many files; we call attention to the
+    following:</p>
+
+<pre>
+  proceedings/
+    order
+    final/
+      1/
+        1_Paper.pdf
+        1_metadata.txt
+      17/
+        17_Paper.pdf
+        17_metadata.txt
+      ...
+</pre>
+
+    <p>The <tt>final/</tt> directory contains papers indexed by their submission order, and then
+    containing the final PDF and metadata (information about authors, affiliations, and so on, used
+    to construct the proceedings index).</p>
+
+    <p>The <tt>order</tt> file is what you use to layout the schedule for the conference. It is
+    seeded with all the papers in the conference or workshop; what you need to add are structured
+    data such as times, names of sessions, and the order the papers are presented in.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p>Below is a list of instructions about how to format your proceedings. To the right are a
+    sample snippet of an <tt>order</tt> file and the associated LaTeX output that is produced from
+    it.</p>
 
     <ul>
       <li>The lines in the file are initially formatted like this: <tt>5 \# Building a large annotated corpus of English: the penn treebank</tt>. These lines corresponds to papers.</li>
@@ -104,8 +148,23 @@
       <li>Once you have done this, you can follow the rest of the directions for proceedings, and send the results to the relevant parties.</li>
     </ul>
   </div>
+  <div class="col">
+<pre>
+* Thursday, June 7th, 2012
+= Joint Demo and Poster Session, together with the Workshop on Predicting and Improving Text
+Readability for Target Reader Populations (PITR 2012)
++ 15:30--17:30 Coffee, system demonstrations, and posters
+5 # A free and open-source tool that reads movie subtitles aloud
+6 # WinkTalk: a demonstration of a multimodal speech synthesis platform linking facial  
+</pre>
+    <img src="images/handbook-output.png" alt="Example LaTeX output of order file" />
+  </div>
 </div>
 
-<hr />
-<i>Last updated on 2013-04-02 11:34 Tuesday.</i>
-</body> </html>
+<div class="row">
+  <hr />
+  <i>Last updated on 2013-04-02 14:49 Tuesday.</i>
+</div>
+
+</body> 
+</html>
