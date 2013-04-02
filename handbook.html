@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> 
+  <head>
+    <meta charset="utf-8">
+    <title>NAACL 2013 Handbook Instructions</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+
+<body>
+
+<h1>How to produce workshop proceedings for the NAACL 2013 handbook</h1>
+
+<div class="row">
+  <div class="col">
+    <p>
+      This page is for conference organizers (main conference, workshop &amp; demo chairs, *SEM chairs)
+      who need to put together a schedule for inclusion in the NAACL handbook. The handbook duties have
+      been folded into the responsibilities of the publications co-chairs this
+      year. <a href="mailto:clemmer.alexander@gmail.com">Alex Clemmer</a> is heading up the
+      construction of the printed handbook; in addition to this, NAACL will also be producing a digital
+      version of the handbook that will be browsable on computers and smart phones. Both of these
+      proceedings will be generated from the same <b>order</b> text files that have been used in the past.
+    </p>
+
+    <h2>Introduction</h2>
+
+    <p>
+      Workshop proceedings will be communicated to the NAACL 2013 handbook team in a canonical
+      format. This document provides a (sparsely-illustrated) procedure to generate your workshop
+      proceedings in this format.
+    </p>
+
+    <h3>Instructions</h3>
+
+    Our goal in this section is to develop instructions that allow workshop chairs to easily generate proceedings in the correct format, while simultaneously avoiding softconf or START, as they greatly complicate the process of building the handbook. Instructions fall roughly into (1) obtaining the data, (2) building an order file, and (3) formatting the order to fit the workbook format.
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+
+      <h4>Obtaining the proceedings</h4>
+
+      Our first task is to obtain the raw proceedings data.
+
+      <ul>
+        <li>First, log on to softconf. Your screen should look roughly like it does in the screen
+        capture to the right.</li>
+        <li>On the righthand side is a column marked "Conference Program". There is a hyperlink at the bottom of this column, with the text "ACLPUB". Click it.</li>
+        <li>We now generate the proceedings. Click on the "Generate" tab, and under "Generate Button", click "ALL".</li>
+        <li>Wait for the generation to finish (this may take awhile).</li>
+        <li>Click the download button.</li>
+        <li>We're done obtaining the data. You may close the browser.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <img src="images/handbook-screen.png">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <h4>Building the order file</h4>
+
+    Now we need to get the data into shape for transmission to the handbook team.
+
+    <ul>
+      <li>Uncompress the tarball you downloaded in the previous step. If you called it <tt>proceedings.tgz</tt>, then (assuming you are in the correct directory) you might run <tt>tar xzf proceedings.tgz</tt>.</li>
+      <li>Obtain the aclpub software. One way to do this is to download the CVS repository using the command <tt>cvs -d :pserver:anoncvs@ftp.clsp.jhu.edu:/aclpub checkout aclpub</tt>.</li>
+      <li>Next we must <tt>aclpub/make/Makefile bookchair proceedings Makefile</tt>. Subsequently:
+        <ul>
+          <li>You may need to set the environment variable <tt>export ACLPUB= pwd/aclpub</tt> for the following step.</li>
+          <li>In previous years, occasi FIXME</li>
+          <li>Open the instructions located at <tt>aclpub/doc/bookchairs/index.html</tt>.</li>
+          <li>If you followed our instructions in section \ref{obtain} for obtaining the data, then you may skip to the next step.</li>
+          <li>Otherwise, follow the steps up to (but not including) the step to execute <tt>make get-order</tt>.</li>
+      </ul></li>
+      <li>Now we must attempt to make the <tt>order</tt> file.
+        <ul>
+          <li>In previous years, it has occasionally been a problem that the Perl module Text-PDF was not found.</li>
+          <li>This can be found at <tt>http://search.cpan.org/~mhosken/Text-PDF-0.29a/</tt>.</li>
+          <li>Download and unpack it.</li>
+          <li>Run <tt>ln -s Text-PDF-0.XX/lib/Text .</tt>, where <tt>XX</tt> is the version number.</li>
+      </ul></li>
+      <li>This results in a file called <tt>order</tt>. Now the only task left is properly formatting the order file to reflect the workshop proceedings.</li>
+    </ul>
+
+    <h4>Formatting the order file</h4>
+
+    The <tt>order</tt> file currently contains pointers to all the papers in your workshop. Your job is now to produce your workshop proceedings. Bulletted below is a list of instructions about how to format your proceedings. In figure 2, we see a successful layout designed using these rules, from last year's conference. In figure 3, we see the \LaTeX output of this layout design.
+
+    <ul>
+      <li>The lines in the file are initially formatted like this: <tt>5 \# Building a large annotated corpus of English: the penn treebank</tt>. These lines corresponds to papers.</li>
+      <li>You must now reorder them according to when they are presented, and supplement them with a time slot, <em>e.g.</em>, <tt>5 \# 09:10--09:35 Building a large annotated corpus of English: the penn treebank</tt>.
+      <li>Other tools at your disposal:
+        <ul>
+          <li>The format <tt>* DAY</tt> will cause \LaTeX to render the header marking the start of a new day.</li>
+          <li>The format <tt>= HEADLINE</tt> will cause \LaTeX to render that line as a session headline.</li>
+          <li>The format <tt>+ TIME DESCRIPTION</tt> will cause \LaTeX to render that line as an additional item.</li>
+        </ul>
+      </li>
+      <li>Once you have done this, you can follow the rest of the directions for proceedings, and send the results to the relevant parties.</li>
+    </ul>
+  </div>
+</div>
+
+<hr />
+<i>Last updated on 2013-04-02 11:34 Tuesday.</i>
+</body> </html>
