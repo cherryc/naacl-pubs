@@ -96,6 +96,36 @@
       </ol>
     </p>
 
+    <h4>Important notes about the order file</h4>
+    <p>The order file is used both to format and order the papers in the proceedings, and
+      also to generate the handbook. The latter can be a complex task, making sure that 
+      the schedule is formatted correctly and consistently, and pulling together times
+      across workshops (like the student research workshop and the main proceedings). Since
+      this is done in LaTeX, it's important that the schedules be formatted to be
+      computer-readable. Here are some notes about the "order" file, including common
+      mistakes:
+    </p>
+
+    <ul>
+      <li>Times should be specified in 24-hour format (implicit AM/PM):
+
+	<pre>+ 12:00--13:30 Lunch</pre>
+
+      <li>Time ranges should be fully specified, with two dashes in
+      between (and no spaces). Don't put just the start time.
+
+	<pre>17 9:00--9:30 # A really great paper</pre>
+
+      <li>Do not put time ranges in parentheses
+
+      <li>Don't put time ranges in session headers. Incorrect:
+
+	<p><b><font color="red">Incorrect</font></b>: 
+	  <pre>= (9:10--11:00) Session 1</pre>
+	Correct: 
+	  <pre>= Session 1</code></pre>
+    </ul>
+
     <h4>Copyright Page</h4>
 
     <p>
